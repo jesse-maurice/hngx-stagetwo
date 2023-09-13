@@ -38,7 +38,7 @@ function MovieDetailsPage({ params }) {
 
   // Check if 'id' exists and is not undefined
   if (id === undefined) {
-    return <p>Loading...</p>;
+    return <div className="loading"></div>;
   }
 
   return (
