@@ -19,7 +19,7 @@ function MovieCard({ movie }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [genres, setGenres] = useState({});
 
-  const API_KEY = "2d28186dc4d3643e787e6b233ee60211";
+  const API_KEY = process.env.API_KEY;
 
   const fetchGenres = async () => {
     try {
