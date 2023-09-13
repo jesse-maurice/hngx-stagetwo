@@ -346,7 +346,8 @@ a {
 .loading{
   border: 4px solid #be123c;
   position: absolute;
-  Top: 50%;
+  left: 50%;
+  top: 50%;
   width: 50px;
   height: 50px;
   border-radius: 50%;

@@ -1,18 +1,15 @@
-// components/MovieDetails.js
-import Image from "next/image";
-import React from "react";
-import Navbar from "./Navbar";
-import Link from "next/link";
-import { AiFillPlayCircle } from "react-icons/ai";
-import Footer from "./Footer";
+import React from 'react';
+
+import Link from 'next/link';
+import { AiFillPlayCircle } from 'react-icons/ai';
+
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 function MovieDetails({ movie }) {
-  const formatDateToUTC = (dateString) => {
+  const formatDate = (dateString) => {
     const date = new Date(dateString);
-    const utcDateString = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1)
-      .toString()
-      .padStart(2, "0")}-${date.getUTCDate().toString().padStart(2, "0")}`;
-    return utcDateString;
+    return format(date, "do MMMM, yyyy");
   };
   return (
     <div>
@@ -39,7 +36,7 @@ function MovieDetails({ movie }) {
       <div className="movie-details">
         <h2 data-testid="movie-title">{movie.title}</h2>
         <p data-testid="movie-release-date" className="release">
-          {`Release Date (UTC): ${formatDateToUTC(movie.release_date)} `}
+          {`Release Date: ${formatDate(movie.release_date)} `}
         </p>
         <p data-testid="movie-runtime" className="release">
           Runtime: {movie.runtime} minutes
