@@ -22,7 +22,7 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_KEY = process.env.API_KEY;
+  const API_KEY = "2d28186dc4d3643e787e6b233ee60211";
   const BASE_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 
   const fetchMovie = async () => {
