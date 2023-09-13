@@ -7,7 +7,7 @@ import Head from 'next/head';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "MovieBox | HNGx Project 2",
+  title: "MovieBox | HNGx Project Two",
   description: "Developed by mauricedev16",
 };
 
