@@ -45,7 +45,6 @@ function MovieDetailsPage({ params }) {
     <div>
       {isLoading && (
         <div className="loading">
-          <p>Loading...</p>
         </div>
       )}
       {isError && <p>Error fetching data</p>}

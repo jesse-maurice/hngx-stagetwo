@@ -98,7 +98,7 @@ const Search = () => {
 
       {isLoading ? (
         // Display a loading indicator while fetching
-        <div className="loading">Loading...</div>
+        <div className="loading"></div>
       ) : (
         <>
           <h2 className="searchText">
