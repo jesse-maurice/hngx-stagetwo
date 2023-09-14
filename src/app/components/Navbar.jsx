@@ -16,7 +16,7 @@ const Navbar = () => {
   const [value, setValue] = useState("");
   const router = useRouter();
 
-  // Load the search text from localStorage on component mount
+  // Load the search text 
   useEffect(() => {
     const savedSearchText = localStorage.getItem("searchText");
     if (savedSearchText) {
@@ -30,10 +30,10 @@ const Navbar = () => {
       // Save the search text to localStorage
       localStorage.setItem("searchText", value);
 
-      // Navigate to the search page
+      // Navigate to the search
       router.push("/search", { state: value, replace: true });
 
-      // Clear the input field
+      // Clear the search field
       setValue("");
     }
   };

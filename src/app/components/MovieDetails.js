@@ -7,9 +7,12 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 
 function MovieDetails({ movie }) {
-  const formatDate = (dateString) => {
+  const formatDateToUTC = (dateString) => {
     const date = new Date(dateString);
-    return format(date, "do MMMM, yyyy");
+    const utcDateString = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${date.getUTCDate().toString().padStart(2, "0")}`;
+    return utcDateString;
   };
   return (
     <div>
@@ -35,8 +38,9 @@ function MovieDetails({ movie }) {
       </div>
       <div className="movie-details">
         <h2 data-testid="movie-title">{movie.title}</h2>
-        <p data-testid="movie-release-date" className="release">
-          {`Release Date: ${formatDate(movie.release_date)} `}
+        <p className="release">
+          <span data-testid="movie-release-date">Release Date in (UTC): </span>
+          {`${formatDateToUTC(movie.release_date)} `}
         </p>
         <p data-testid="movie-runtime" className="release">
           Runtime: {movie.runtime} minutes
